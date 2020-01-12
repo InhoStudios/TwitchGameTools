@@ -26,14 +26,18 @@ class GameScene extends Phaser.Scene {
 	}
 
 	create() {
+		this.add.text(1050, 100, 'Players', { fill: '#FFF', fontSize: 32 }).setOrigin(0.5);
+
 		generateMap();
 		drawGrid(this);
 		initPlayers(this);
 		retrieveData();
+		generatePlayerDisplay(this);
 	}
 	
 	update() {
 		tickMissiles(this);
 		retrieveData();
+		if(refreshPlayerDisplay) generatePlayerDisplay(this);
 	}
 }
