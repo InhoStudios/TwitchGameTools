@@ -1,24 +1,27 @@
-function getJSON() {
-	
-}
+let url = "https://inhostudios.api.stdlib.com/twitch-game-tools@dev/?text=move%20left&username=andyshen";
 
-let cursors, spacebar;
+function retrieveData() {
+	let command, dir, id;
 
-function initInput(game) {
-	spacebar = game.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-	cursors = game.input.keyboard.createCursorKeys();
-}
+	$.getJSON(url, function(data) {
+		command = data.command;
+		dir = data.dir;
+		id = data.username;
+		console.log(data);
+	});
 
-function getInput() {
-	if(spacebar.isDown) fireAction("1");
-
-	if (cursors.up.isDown) {
-		movePlayer(1, 0);
-	} else if (cursors.right.isDown) {
-		movePlayer(1, 1);
-	} else if (cursors.down.isDown) {
-		movePlayer(1, 2);
-	} else if (cursors.left.isDown) {
-		movePlayer(1, 3);
+	switch (command) {
+		case "join": addPlayer(id); break;
+		case "move":
+			switch (dir) {
+				case "up": movePlayer(id, 0); break;
+				case "right": movePlayer(id, 1); break;
+				case "down": movePlayer(id, 2); break;
+				case "left": movePlayer(id, 3); break;
+				default: break;
+			} break;
+		case "attack": fireAction(id); break;
+		case "leave": removePlayer(id); break;
+		default: break;
 	}
 }

@@ -30,11 +30,11 @@ class GameScene extends Phaser.Scene {
 		drawGrid(this);
 		initPlayers(this);
 		initInput(this);
+		retrieveData();
 	}
 	
 	update() {
 		getInput();
 		tickMissiles(this);
-		getJSON(this);
 	}
 }
