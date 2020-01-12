@@ -1,5 +1,4 @@
 let players, missiles;
-let refreshPlayerDisplay = false;
 let playerList = {};
 let playerText;
 
@@ -13,8 +12,6 @@ function initPlayers(game) {
 }
 
 function generatePlayerDisplay(game) {
-	refreshPlayerDisplay = false;
-
 	for(let i = 0; i < playerText.length; i++) playerText[i].destroy();
 
 	playerText = [];
@@ -22,7 +19,9 @@ function generatePlayerDisplay(game) {
 	let i = 0;
 	for(let player in playerList) {
 		let text = game.add.text(1050, 150 + 30 * i, `${player}`, { fill: '#FFF', fontSize: 20 }).setOrigin(0.5);
+		let text2 = game.add.text(playerList[player].x, playerList[player].y - 16, `${player}`, { fill: '#FFF', fontSize: 8 }).setOrigin(0.5);
 		playerText.push(text);
+		playerText.push(text2);
 		i++;
 	}
 }
@@ -36,7 +35,6 @@ function addPlayer(id) {
 	player.setCollideWorldBounds(true);
 	playerList[id] = player;
 	console.log(`Created player {${id}} at ${x}, ${y}`);
-	refreshPlayerDisplay = true;
 }
 
 function fireAction(id) {
@@ -66,7 +64,6 @@ function removePlayer(id) {
 	player.destroy();
 	console.log(`Player {${id}} has died.`);
 	delete playerList[id];
-	refreshPlayerDisplay = true;
 }
 
 function movePlayer(id, dir) {

@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/thebitspud/TwitchGameTools/output.json";
+const url = "http://localhost/TwitchGameTools/output.json";
 let timestamp;
 
 function retrieveData() {

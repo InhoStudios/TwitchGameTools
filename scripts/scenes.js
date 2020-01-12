@@ -38,6 +38,6 @@ class GameScene extends Phaser.Scene {
 	update() {
 		tickMissiles(this);
 		retrieveData();
-		if(refreshPlayerDisplay) generatePlayerDisplay(this);
+		generatePlayerDisplay(this);
 	}
 }

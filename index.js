@@ -35,20 +35,20 @@ client.on('chat', (channel, user, message, self) => {
 	let readUrl;
 
 	switch(message) {
-		case "!game": client.action('epicyasuokid2007', `The game currently being played is Interbots!`); return;
-		case "!enter":
+		case "!game": case "!now playing": client.action('epicyasuokid2007', `The game currently being played is Interbots!`); return;
+		case "!enter": case "!respawn": case "!spawn": case "!connect":
 		case "!join": client.action('epicyasuokid2007', `${user.username} has joined the game!`); readUrl = getUrl("join", user.username); break;
-		case "!move up": case "!mu":
+		case "!move up": case "!mu": case "!u":
 		case "!move u": readUrl = getUrl("move%20up", user.username); break;
-		case "!move right": case "!mr":
+		case "!move right": case "!mr": case "!r":
 		case "!move r": readUrl = getUrl("move%20right", user.username); break;
-		case "!move down": case "!md":
+		case "!move down": case "!md": case "!d":
 		case "!move d": readUrl = getUrl("move%20down", user.username); break;
-		case "!move left": case "!ml":
+		case "!move left": case "!ml": case "!l":
 		case "!move l": readUrl = getUrl("move%20left", user.username); break;
 		case "!shoot": case "!attack":
 		case "!fire": readUrl = getUrl("fire", user.username); break;
-		case "!disconnect":
+		case "!disconnect": case "!quit": case "!dc":
 		case "!leave": client.action('epicyasuokid2007', `${user.username} has disconnected from the game!`);
 		readUrl = getUrl("leave", user.username); break;
 		case "!help": client.action('epicyasuokid2007', '~~INTERBOTS COMMANDS~~ !join : Join the game | !ml : Move left | !mr : Move right | !mu : Move Up | !md : Move down | !fire : Shoot projectile | !leave : Disconnect'); return;
