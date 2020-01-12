@@ -1,0 +1,23 @@
+{
+  "name": "twitchgametools",
+  "version": "1.0.0",
+  "description": "Integrating twitch chat interactivity into a tool that can be implemented into games easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InhoStudios/TwitchGameTools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InhoStudios/TwitchGameTools/issues"
+  },
+  "homepage": "https://github.com/InhoStudios/TwitchGameTools#readme",
+  "dependencies": {
+    "twitch-js": "^1.2.17"
+  },
+  "devDependencies": {}
+}
