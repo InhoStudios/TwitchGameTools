@@ -1,3 +1,5 @@
+const TILE_SIZE = 30;
+
 const config = { // game settings
 	type: Phaser.CANVAS,
 	parent: 'content',
@@ -7,7 +9,7 @@ const config = { // game settings
 	pixelArt: true,
 	physics: {
 		default: 'arcade',
-		fps: 60,
+		fps: 10,
 		arcade: {
 			debug: false
 		}
