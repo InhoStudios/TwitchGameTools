@@ -22,15 +22,19 @@ class GameScene extends Phaser.Scene {
 
 	preload() {
 		this.load.image('player', 'assets/player.png');
+		this.load.image('missile', 'assets/missile.png');
 	}
 
 	create() {
 		generateMap();
 		drawGrid(this);
 		initPlayers(this);
+		initInput(this);
 	}
 	
 	update() {
-		getJSON();
+		getInput();
+		tickMissiles(this);
+		getJSON(this);
 	}
 }
