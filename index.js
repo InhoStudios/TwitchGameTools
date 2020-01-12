@@ -39,13 +39,13 @@ client.on('chat', (channel, user, message, self) => {
 		case "!enter":
 		case "!join": client.action('epicyasuokid2007', `${user.username} has joined the game!`); readUrl = getUrl("join", user.username); break;
 		case "!move up": case "!mu":
-		case "!move U": readUrl = getUrl("move%20up", user.username); break;
+		case "!move u": readUrl = getUrl("move%20up", user.username); break;
 		case "!move right": case "!mr":
-		case "!move R": readUrl = getUrl("move%20right", user.username); break;
+		case "!move r": readUrl = getUrl("move%20right", user.username); break;
 		case "!move down": case "!md":
-		case "!move D": readUrl = getUrl("move%20down", user.username); break;
+		case "!move d": readUrl = getUrl("move%20down", user.username); break;
 		case "!move left": case "!ml":
-		case "!move L": readUrl = getUrl("move%20left", user.username); break;
+		case "!move l": readUrl = getUrl("move%20left", user.username); break;
 		case "!shoot": case "!attack":
 		case "!fire": readUrl = getUrl("fire", user.username); break;
 		case "!disconnect":

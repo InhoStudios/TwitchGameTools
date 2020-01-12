@@ -24,7 +24,7 @@ function retrieveData() {
 					case "left": movePlayer(id, 3); break;
 					default: break;
 				} break;
-			case "attack": fireAction(id); break;
+			case "fire": fireAction(id); break;
 			case "leave": removePlayer(id); break;
 			default: break;
 		}

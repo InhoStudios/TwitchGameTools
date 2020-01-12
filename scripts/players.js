@@ -10,6 +10,7 @@ function initPlayers(game) {
 }
 
 function addPlayer(id) {
+	if(playerList[id] != null) return;
 	x = Math.floor(Math.random() * 30);
 	y = Math.floor(Math.random() * 24);
 	let player = players.create(x * TILE_SIZE + 15, y * TILE_SIZE + 15, 'player');

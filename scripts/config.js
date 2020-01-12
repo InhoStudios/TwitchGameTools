@@ -44,7 +44,7 @@ const config = { // game settings
 	pixelArt: true,
 	physics: {
 		default: 'arcade',
-		fps: 10,
+		fps: 60,
 		arcade: {
 			debug: false
 		}
