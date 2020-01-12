@@ -7,8 +7,6 @@ function initPlayers(game) {
 	game.physics.world.setBounds(0, 0, 900, 720);
 
 	game.physics.add.overlap(players, missiles, missileHit, null, game);
-
-	for(let i = 0; i < 20; i++) addPlayer(i);
 }
 
 function addPlayer(id) {
@@ -18,7 +16,6 @@ function addPlayer(id) {
 	player.setTint(getRandomTint());
 	player.setCollideWorldBounds(true);
 	playerList[id] = player;
-	player.isDead = false;
 	console.log(`Created player {${id}} at ${x}, ${y}`);
 }
 

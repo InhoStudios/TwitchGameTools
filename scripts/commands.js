@@ -1,27 +1,32 @@
-let url = "https://inhostudios.api.stdlib.com/twitch-game-tools@dev/?text=move%20left&username=andyshen";
+const url = "http://localhost:8080/thebitspud/TwitchGameTools/output.json";
+let timestamp;
 
 function retrieveData() {
 	let command, dir, id;
 
 	$.getJSON(url, function(data) {
+		if(timestamp == data.timestamp) return;
+		else timestamp = data.timestamp;
+
 		command = data.command;
 		dir = data.dir;
 		id = data.username;
-		console.log(data);
-	});
 
-	switch (command) {
-		case "join": addPlayer(id); break;
-		case "move":
-			switch (dir) {
-				case "up": movePlayer(id, 0); break;
-				case "right": movePlayer(id, 1); break;
-				case "down": movePlayer(id, 2); break;
-				case "left": movePlayer(id, 3); break;
-				default: break;
-			} break;
-		case "attack": fireAction(id); break;
-		case "leave": removePlayer(id); break;
-		default: break;
-	}
+		console.log(`Command: ${command}, Direction: ${dir}, ID: ${id}`);
+
+		switch(command) {
+			case "join": addPlayer(id); break;
+			case "move":
+				switch (dir) {
+					case "up": movePlayer(id, 0); break;
+					case "right": movePlayer(id, 1); break;
+					case "down": movePlayer(id, 2); break;
+					case "left": movePlayer(id, 3); break;
+					default: break;
+				} break;
+			case "attack": fireAction(id); break;
+			case "leave": removePlayer(id); break;
+			default: break;
+		}
+	});
 }
