@@ -7,4 +7,4 @@ Check out our [Devpost](https://devpost.com/software/twitch-game-tools) and our 
 
 Creators:
 
-@InhoStudios @thebitsbud @jpg157 @aditya
+@InhoStudios @thebitsbud @jpg157 @adityanaithani
