@@ -1,5 +1,5 @@
 # TwitchGameTools
-Our teams project for nwHacks 2020:
+Our teams' project for nwHacks 2020:
 
 Twitch Game Tools is a proof of concept Twitch Chat command query API. As a framework, it allows game developers to easily implement a tool that will allow twitch streamers to interact with their twitch chat audience through their games.
 
